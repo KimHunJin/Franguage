@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_detail_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/profile_detail_background_image"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:background="#F5DEB3" />
+
+            <com.franguage.admin.test01.Utils.RoundImageView
+                android:id="@+id/img_userprofile"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_alignBottom="@+id/profile_detail_background_image"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_small_camera"
+                android:scaleType="fitCenter" />
+
+            <!--이름-->
+            <TextView
+                android:id="@+id/profile_detail_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:text="이름"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <!--이미지-->
+            <com.franguage.admin.test01.Utils.RoundImageView
+                android:id="@+id/profile_detail_user_image"
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:layout_below="@+id/profile_detail_user_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile" />
+
+            <com.franguage.admin.test01.Utils.RoundImageView
+                android:id="@+id/profile_detail_user_image_edit"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignBottom="@+id/profile_detail_user_image"
+                android:layout_alignEnd="@+id/profile_detail_user_image"
+                android:layout_marginLeft="88dp"
+                android:background="@drawable/ic_small_camera" />
+
+            <RelativeLayout
+                android:id="@+id/layout_00"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@id/profile_detail_user_image"
+                android:layout_marginTop="48dp">
+                <!--국적-->
+                <TextView
+                    android:id="@+id/profile_detail_country"
+                    style="@style/Profile_Detail_View_Member_Item"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="국적" />
+
+                <Spinner
+                    android:id="@+id/profile_detail_user_country"
+                    style="@style/Profile_Detail_View_User_Item"
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/profile_detail_country" />
+
+                <View
+                    android:id="@+id/profile_detail_divider01"
+                    style="@style/Profile_Detail_View_Divider"
+                    android:layout_below="@id/profile_detail_country"
+                    android:layout_marginTop="8dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_01"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@id/layout_00">
+                <!--성별-->
+                <TextView
+                    android:id="@+id/profile_detail_gender"
+                    style="@style/Profile_Detail_View_Member_Item"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:text="성별" />
+
+                <Spinner
+                    android:id="@+id/profile_detail_user_gender"
+                    style="@style/Profile_Detail_View_User_Item"
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_toRightOf="@+id/profile_detail_gender" />
+
+                <View
+                    android:id="@+id/profile_detail_divider02"
+                    style="@style/Profile_Detail_View_Divider"
+                    android:layout_below="@+id/profile_detail_gender"
+                    android:layout_marginTop="8dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_02"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@id/layout_01">
+                <!--활동 지역-->
+                <TextView
+                    android:id="@+id/profile_detail_location"
+                    style="@style/Profile_Detail_View_Member_Item"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:text="활동 지역" />
+
+                <Spinner
+                    android:id="@+id/profile_detail_user_location_first"
+                    style="@style/Profile_Detail_View_User_Item"
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_toRightOf="@id/profile_detail_location" />
+
+
+                <View
+                    android:id="@+id/profile_detail_divider03"
+                    style="@style/Profile_Detail_View_Divider"
+                    android:layout_below="@id/profile_detail_location"
+                    android:layout_marginTop="8dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_03"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@id/layout_02">
+                <!--E - Mail-->
+                <TextView
+                    android:id="@+id/profile_detail_email"
+                    style="@style/Profile_Detail_View_Member_Item"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:text="E - mail" />
+
+                <EditText
+                    android:id="@+id/profile_detail_user_email"
+                    style="@style/Profile_Detail_View_User_Item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_toRightOf="@+id/profile_detail_email"
+                    android:hint="Example@email.com" />
+
+                <View
+                    android:id="@+id/profile_detail_divider04"
+                    style="@style/Profile_Detail_View_Divider"
+                    android:layout_below="@+id/profile_detail_email"
+                    android:layout_marginTop="8dp" />
+            </RelativeLayout>
+
+            <!--사용 언어-->
+            <RelativeLayout
+                android:id="@+id/layout_04"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@id/layout_03">
+
+                <TextView
+                    android:id="@+id/profile_detail_language"
+                    style="@style/Profile_Detail_View_Member_Item"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:text="사용 언어" />
+
+                <Spinner
+                    android:id="@+id/profile_detail_user_want_language"
+                    style="@style/Profile_Detail_View_User_Item"
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_toRightOf="@id/profile_detail_language" />
+
+                <Spinner
+                    android:id="@+id/profile_detail_user_own_language"
+                    style="@style/Profile_Detail_View_User_Item"
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_toRightOf="@id/profile_detail_user_want_language" />
+
+                <View
+                    android:id="@+id/profile_detail_divider05"
+                    style="@style/Profile_Detail_View_Divider"
+                    android:layout_below="@id/profile_detail_user_want_language"
+                    android:layout_marginTop="8dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_05"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_below="@id/layout_04">
+                <!--자기소개-->
+                <TextView
+                    android:id="@+id/profile_detail_introduce"
+                    style="@style/Profile_Detail_View_Member_Item"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:text="자기 소개" />
+
+                <EditText
+                    android:id="@+id/profile_detail_user_introduce"
+                    style="@style/Profile_Detail_View_User_Item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_toRightOf="@id/profile_detail_introduce"
+                    android:hint="자기 소개를 입력해주세요." />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnConfirm"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_05"
+                android:layout_marginLeft="54dp"
+                android:text="확인"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnCancle"
+                android:layout_width="112dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/layout_05"
+                android:layout_marginRight="54dp"
+                android:text="취소"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/pro_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+    </ProgressBar>
+
+    <RelativeLayout
+        android:id="@+id/roomBakcground"
+        android:layout_width="match_parent"
+        android:layout_height="189dp">
+
+        <ImageView
+            android:id="@+id/backgroundimage"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#DCDCDC" />
+
+        <ImageView
+            android:id="@+id/ic_member"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_fragment_home_list_member" />
+
+        <TextView
+            android:id="@+id/room_member"
+            android:layout_width="36dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/ic_member"
+            android:singleLine="true"
+            android:text="인원"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/ic_language"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/room_member"
+            android:src="@drawable/ic_fragment_home_list_language" />
+
+        <TextView
+            android:id="@+id/room_language"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/ic_language"
+            android:singleLine="true"
+            android:text="사용 언어"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/ic_location"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/room_language"
+            android:src="@drawable/ic_fragment_home_list_location" />
+
+        <TextView
+            android:id="@+id/room_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/ic_location"
+            android:singleLine="true"
+            android:text="장소"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/room_detail_name"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="48dp"
+            android:layout_marginLeft="16dp"
+            android:singleLine="true"
+            android:text="방제목가나다라마바사아자차카타파하"
+            android:textColor="#000000"
+            android:textSize="23sp" />
+
+        <ImageView
+            android:id="@+id/ic_favorite_mark"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/room_detail_name"
+            android:layout_alignEnd="@+id/room_location"
+            android:layout_marginRight="16dp"
+            android:baselineAlignBottom="@+id/room_location"
+            android:src="@drawable/ic_room_favorite" />
+
+        <ImageView
+            android:id="@+id/ic_room_join_quit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/ic_favorite_mark"
+            android:layout_marginEnd="32dp"
+            android:layout_toStartOf="@+id/ic_favorite_mark"
+            android:src="@drawable/ic_room_join" />
+
+        <ImageView
+            android:id="@+id/ic_room_explosive"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_above="@id/ic_favorite_mark"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_explosive_room"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dynamic_user_profile"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@id/roomBakcground"
+        android:background="#000000"></RelativeLayout>
+
+    <View
+        android:id="@+id/divider00"
+        style="@style/Profile_Detail_View_Divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/dynamic_user_profile"
+        android:layout_marginTop="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/room_introduce"
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:layout_below="@id/divider00">
+
+        <TextView
+            android:id="@+id/room_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:text="모임 소개"
+            android:textColor="#1397ab"
+            android:textSize="23sp" />
+
+        <TextView
+            android:id="@+id/room_introduce_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/room_name"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/room_introduce"
+        android:background="#1397ab">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:text="게시판"
+            android:textColor="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/room_board_edit"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_mode_edit_white_18dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relativeLayout">
+
+        <ListView
+            android:id="@+id/room_board_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/relativeLayout">
+
+        </ListView>
+    </ScrollView>
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

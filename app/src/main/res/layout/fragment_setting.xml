@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout00"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <TextView
+            android:id="@+id/activity_setting_toggle_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="32dp"
+            android:text="푸시 알림"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <Switch
+            android:id="@+id/activity_setting_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="16dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/activity_setting_divider00"
+        style="@style/Widget.MyTheme.NavigationDrawerItem.Divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/layout00" />
+
+    <RelativeLayout
+        android:id="@+id/layout01"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_below="@id/activity_setting_divider00"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/activity_setting_policy_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="32dp"
+            android:text="이용 약관 및 정책"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/activity_setting_policy"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/ic_keyboard_arrow_right_black_24dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/activity_setting_divider01"
+        style="@style/Widget.MyTheme.NavigationDrawerItem.Divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/layout01" />
+
+    <RelativeLayout
+        android:id="@+id/layout02"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_below="@id/layout01"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/activity_setting_about_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="32dp"
+            android:text="About Us"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/ic_activity_setting_about"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/ic_keyboard_arrow_right_black_24dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/activity_setting_divider02"
+        style="@style/Widget.MyTheme.NavigationDrawerItem.Divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/layout02" />
+
+    <RelativeLayout
+        android:id="@+id/layout03"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_below="@id/layout02"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/activity_setting_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="32dp"
+            android:text="로그 아웃"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/ic_activity_setting_logout"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/ic_keyboard_arrow_right_black_24dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/activity_setting_divider03"
+        style="@style/Widget.MyTheme.NavigationDrawerItem.Divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/layout03" />
+</RelativeLayout>

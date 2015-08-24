@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--Back Button-->
+    <item
+        android:id="@+id/action_back"
+        android:title="Back Button"
+        android:icon="@drawable/ic_keyboard_arrow_left_black_24dp"
+        android:showAsAction="ifRoom"
+        />
+</menu>

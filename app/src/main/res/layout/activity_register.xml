@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/mainback_mod"
+    tools:context="com.franguage.admin.test01.Activity.RegisterActivity">
+
+
+    <TextView
+        android:id="@+id/txtLogoR"
+        android:text="Franguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="45dp"
+        android:textColor="@color/default_white_background"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <RelativeLayout
+        android:id="@+id/edtLayout"
+        android:layout_below="@id/txtLogoR"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/back_dark"
+        android:layout_marginTop="50dp">
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이름"
+            android:textColor="@color/switch_thumb_disabled_material_light"
+            android:textColorHint="@color/switch_thumb_disabled_material_light"/>
+
+        <EditText
+            android:id="@+id/edtEmailR"
+            android:layout_below="@id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이메일"
+            android:textColor="@color/switch_thumb_disabled_material_light"
+            android:textColorHint="@color/switch_thumb_disabled_material_light"/>
+
+        <EditText
+            android:id="@+id/edtPwdR"
+            android:layout_below="@id/edtEmailR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="패스워드"
+            android:password="true"
+            android:textColor="@color/switch_thumb_disabled_material_light"
+            android:textColorHint="@color/switch_thumb_disabled_material_light"/>
+
+        <EditText
+            android:id="@+id/edtPwdC"
+            android:layout_below="@id/edtPwdR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="패스워드 확인"
+            android:password="true"
+            android:textColor="@color/switch_thumb_disabled_material_light"
+            android:textColorHint="@color/switch_thumb_disabled_material_light"/>
+
+        <Button
+            android:id="@+id/btnRegist"
+            android:layout_below="@id/edtPwdC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이메일로 가입하기"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/row"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/edtLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="match_parent"
+            style="@style/Widget.MyTheme.NavigationDrawerItem.DividerBold2"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="or"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white_alpha_87" />
+        <View
+            android:layout_width="match_parent"
+            style="@style/Widget.MyTheme.NavigationDrawerItem.DividerBold2"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_buttonR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@id/row" />
+
+
+
+</RelativeLayout>

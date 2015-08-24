@@ -1,0 +1,1 @@
+include ':app', 'ActionBarSherlock', 'F.A.BLibrary', 'IndicatorLibrary', ':facebook'

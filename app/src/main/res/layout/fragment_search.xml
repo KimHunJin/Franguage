@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_search_background" />
+
+    <TextView
+        android:id="@+id/search_want_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="학습 희망 언어"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/search_want_language_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_want_language"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/search_want_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_want_language_spinner"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="모임 지역"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/search_location_si"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_want_location"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp" />
+
+    <Spinner
+        android:id="@+id/search_location_gu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_location_si"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/search_member"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_location_gu"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="모임 인원"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/search_pick_member"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_member"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/search_confirm"
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_pick_member"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:text="확인" />
+
+    <Button
+        android:id="@+id/search_cancel"
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/search_pick_member"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        android:text="취소" />
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.franguage.admin.test01.Utils.RoundImageView
+        android:id="@+id/board_user_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp" />
+
+    <TextView
+        android:id="@+id/board_user_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:singleLine="true"
+        android:text="코멘트" />
+
+    <TextView
+        android:id="@+id/board_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/board_user_icon"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:text="유저 네임" />
+
+    <TextView
+        android:id="@+id/board_timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/board_user_name"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:text="타임 스탬프" />
+</RelativeLayout>

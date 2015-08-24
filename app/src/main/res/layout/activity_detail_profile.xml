@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_detail_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/profile_detail_background_image"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:background="#F5DEB3" />
+
+            <!--이름-->
+            <TextView
+                android:id="@+id/profile_detail_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:text="이름"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <!--이미지-->
+            <com.franguage.admin.test01.Utils.RoundImageView
+                android:id="@+id/profile_detail_user_image"
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:layout_below="@+id/profile_detail_user_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile" />
+
+            <!--국적-->
+            <TextView
+                android:id="@+id/profile_detail_country"
+                style="@style/Profile_Detail_View_Member_Item"
+                android:layout_below="@id/profile_detail_user_image"
+                android:layout_marginTop="48dp"
+                android:text="국적" />
+
+            <TextView
+                android:id="@+id/profile_detail_user_countury"
+                style="@style/Profile_Detail_View_User_Item"
+                android:layout_below="@id/profile_detail_user_image"
+                android:layout_marginTop="48dp"
+                android:layout_toRightOf="@id/profile_detail_country"
+                android:text="유저 국적" />
+
+            <View
+                android:id="@+id/profile_detail_divider01"
+                style="@style/Profile_Detail_View_Divider"
+                android:layout_below="@id/profile_detail_user_countury" />
+
+            <!--성별-->
+            <TextView
+                android:id="@+id/profile_detail_gender"
+                style="@style/Profile_Detail_View_Member_Item"
+                android:layout_below="@id/profile_detail_divider01"
+                android:text="성별" />
+
+            <TextView
+                android:id="@+id/profile_detail_user_gender"
+                style="@style/Profile_Detail_View_User_Item"
+                android:layout_below="@id/profile_detail_divider01"
+                android:layout_toRightOf="@+id/profile_detail_gender"
+                android:text="유저 성별" />
+
+            <View
+                android:id="@+id/profile_detail_divider02"
+                style="@style/Profile_Detail_View_Divider"
+                android:layout_below="@+id/profile_detail_gender" />
+            <!--활동 지역-->
+            <TextView
+                android:id="@+id/profile_detail_location"
+                style="@style/Profile_Detail_View_Member_Item"
+                android:layout_below="@+id/profile_detail_divider02"
+                android:text="활동 지역" />
+
+            <TextView
+                android:id="@+id/profile_detail_user_location"
+                style="@style/Profile_Detail_View_User_Item"
+                android:layout_below="@id/profile_detail_divider02"
+                android:layout_toRightOf="@id/profile_detail_location"
+                android:text="유저 활동 지역" />
+
+            <View
+                android:id="@+id/profile_detail_divider03"
+                style="@style/Profile_Detail_View_Divider"
+                android:layout_below="@id/profile_detail_location" />
+
+            <!--E - Mail-->
+            <TextView
+                android:id="@+id/profile_detail_email"
+                style="@style/Profile_Detail_View_Member_Item"
+                android:layout_below="@+id/profile_detail_divider03"
+                android:text="E - mail" />
+
+            <TextView
+                android:id="@+id/profile_detail_user_email"
+                style="@style/Profile_Detail_View_User_Item"
+                android:layout_below="@id/profile_detail_divider03"
+                android:layout_toRightOf="@+id/profile_detail_email"
+                android:text="유저@이.메일" />
+
+            <View
+                android:id="@+id/profile_detail_divider04"
+                style="@style/Profile_Detail_View_Divider"
+                android:layout_below="@+id/profile_detail_email" />
+
+            <!--사용 언어-->
+            <TextView
+                android:id="@+id/profile_detail_language"
+                style="@style/Profile_Detail_View_Member_Item"
+                android:layout_below="@id/profile_detail_divider04"
+                android:text="사용 언어" />
+
+            <TextView
+                android:id="@+id/profile_detail_user_language"
+                style="@style/Profile_Detail_View_User_Item"
+                android:layout_below="@id/profile_detail_divider04"
+                android:layout_toRightOf="@id/profile_detail_language"
+                android:text="유저 사용 언어" />
+
+            <View
+                android:id="@+id/profile_detail_divider05"
+                style="@style/Profile_Detail_View_Divider"
+                android:layout_below="@id/profile_detail_language" />
+
+            <TextView
+                android:id="@+id/profile_detail_introduce"
+                style="@style/Profile_Detail_View_Member_Item"
+                android:layout_below="@id/profile_detail_divider05"
+                android:text="자기 소개" />
+
+            <TextView
+                android:id="@+id/profile_detail_user_introduce"
+                style="@style/Profile_Detail_View_User_Item"
+                android:layout_below="@id/profile_detail_divider05"
+                android:layout_toRightOf="@id/profile_detail_introduce"
+                android:text="유저 자기 소개 가나다라마바사아자차카타파하" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
