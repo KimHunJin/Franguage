@@ -85,6 +85,9 @@ public class CreateActivity extends ActionBarActivity {
     private String mCurrentPhotoPath;
     private Uri mContentUri;
     private RoundImageView mImage;
+
+    private ProgressDialog dialog;
+
     String room_key;
 
     // test photo and network
@@ -395,7 +398,7 @@ public class CreateActivity extends ActionBarActivity {
     private class NetworkGetGu extends AsyncTask<String, String, Integer> {
         private String err_msg = "Network error.";
         private JSONObject jObject;
-        private ProgressDialog dialog;
+        private ProgressDialog dialog_gu;
 
 
         @Override
@@ -406,7 +409,7 @@ public class CreateActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(Integer result) {
             // TODO Auto-generated method stub
-            dialog.cancel();
+            dialog_gu.cancel();
 
             if (result == 0) {
 
@@ -436,7 +439,7 @@ public class CreateActivity extends ActionBarActivity {
         protected void onPreExecute() {
             // TODO Auto-generated method stub
             Log.e("Pre","onPreExecute");
-            dialog = ProgressDialog.show(CreateActivity.this, "", "...", true);
+            dialog_gu = ProgressDialog.show(CreateActivity.this, "", "...", true);
         }
 
         private Integer processing() {
@@ -699,7 +702,7 @@ public class CreateActivity extends ActionBarActivity {
     private class NetworkSetImage extends AsyncTask<String, String, Integer> {
 
         private String err_msg = "Network error.";
-        private ProgressDialog dialog;
+
 
         JSONObject jObject;
 
@@ -713,7 +716,7 @@ public class CreateActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(Integer result) {
             // TODO Auto-generated method stub
-            dialog.cancel();
+//            dialog.cancel();
             Log.e("Post","onPostExecute");
 
             if (result == 100) {
@@ -832,12 +835,12 @@ public class CreateActivity extends ActionBarActivity {
 
     private class NetworkGetRoomKey extends AsyncTask<String, String, Integer> {
         private String err_msg = "Network error.";
-        private ProgressDialog dialog;
+//        private ProgressDialog dialog;
 
         JSONObject jObject;
         protected void onPreExecute() {
 
-            dialog = ProgressDialog.show(CreateActivity.this, "", "", true);
+//            dialog = ProgressDialog.show(CreateActivity.this, "", "", true);
 
         }
 
@@ -886,7 +889,7 @@ public class CreateActivity extends ActionBarActivity {
             return 0;
         }
         protected void onPostExecute(Integer result) {
-            dialog.cancel();
+//            dialog.cancel();
 
             Log.e("result", result + "");
             if(result == 0)
@@ -916,12 +919,12 @@ public class CreateActivity extends ActionBarActivity {
     private class NetworkSetMyAttend extends  AsyncTask<String, String, Integer> {
 
         private String err_msg = "Network error.";
-        private ProgressDialog dialog;
+//        private ProgressDialog dialog;
 
         JSONObject jObject;
         protected void onPreExecute() {
 
-            dialog = ProgressDialog.show(CreateActivity.this, "", "", true);
+//            dialog = ProgressDialog.show(CreateActivity.this, "", "", true);
 
         }
 
