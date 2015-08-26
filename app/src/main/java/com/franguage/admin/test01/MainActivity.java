@@ -29,7 +29,10 @@ import com.franguage.admin.test01.Activity.ProfileDetailActivity;
 import com.franguage.admin.test01.Fragments.SearchFragment;
 import com.franguage.admin.test01.Fragments.SettingFragment;
 import com.franguage.admin.test01.Network.NetworkGetSi;
+import com.franguage.admin.test01.Utils.Img_Path;
+import com.franguage.admin.test01.Utils.RoundImageView;
 import com.franguage.admin.test01.Utils.Utils;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -54,10 +57,13 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView mNavigationView;
     private long mBackPress;
     private static final int mInterval = 2000;
+    private ImageLoader loader = null;
+
 //    private ActionBarDrawerToggle mToggle;
     String user_key;
-    String name, profile_land, profile_location_activity, profile_email ,profile_possible_language, profile_sex, profile_want_language, profile_introduce;
+    String name, profile_land, profile_location_activity, profile_email ,profile_possible_language, profile_sex, profile_want_language, profile_introduce, img_path;
     TextView user_name, user_country, user_location,  user_language, user_email;
+    RoundImageView img;
 
     Fragment mFragment = null;
     Class mFragmentClass = null;
@@ -68,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         si_list = new NetworkGetSi().getNetworkSi();
+        loader = ImageLoader.getInstance();
 
         mFragmentClass = HomeFramgment.class;
         change();
@@ -77,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             user_key = Utils.getAppPreferences(MainActivity.this, "user_key");
         }
 
+        img = (RoundImageView)findViewById(R.id.profile_image);
         user_name = (TextView)findViewById(R.id.user_name);
         user_country = (TextView)findViewById(R.id.user_country_t);
         user_location = (TextView)findViewById(R.id.user_location_t);
@@ -98,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         mNavigationView = (NavigationView) findViewById(R.id.nvView);
         initDrawerContent(mNavigationView);
         initToggle();
-        new NetworkGetList().execute("");
+        new NetworkGetProfile().execute("");
     }
 
     private ActionBarDrawerToggle initToggle() {
@@ -221,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
             mIntent.putExtra("profile_possible_language", profile_possible_language);
             mIntent.putExtra("profile_sex", profile_sex);
             mIntent.putExtra("profile_introduce", profile_introduce);
+            mIntent.putExtra("profile_img", img_path);
             startActivity(mIntent);
         }
         else {
@@ -228,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private class NetworkGetList extends AsyncTask<String, String, Integer> {
+    private class NetworkGetProfile extends AsyncTask<String, String, Integer> {
 
         private String err_msg = "Network error.";
 
@@ -256,6 +265,8 @@ public class MainActivity extends AppCompatActivity {
                         profile_sex = jObject.getJSONArray("ret").getJSONObject(0).getString("profile_sex");
                         profile_want_language = jObject.getJSONArray("ret").getJSONObject(0).getString("profile_want_language");
                         profile_introduce = jObject.getJSONArray("ret").getJSONObject(0).getString("profile_introduce");
+                        img_path = Img_Path.IMG_PATH + jObject.getJSONArray("ret").getJSONObject(0).getString("profile_image");
+                        loader.displayImage(img_path, img);
 
                         user_name.setText(name);
                         user_country.setText(profile_land);
@@ -332,5 +343,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Press Back Again To Exit", Toast.LENGTH_SHORT).show();
         }
         mBackPress = System.currentTimeMillis();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkGetProfile().execute("");
     }
 }
