@@ -43,7 +43,7 @@
             android:layout_toRightOf="@id/ic_member"
             android:singleLine="true"
             android:text="인원"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="18sp" />
 
         <ImageView
@@ -65,7 +65,7 @@
             android:layout_toRightOf="@id/ic_language"
             android:singleLine="true"
             android:text="사용 언어"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="18sp" />
 
         <ImageView
@@ -87,7 +87,7 @@
             android:layout_toRightOf="@id/ic_location"
             android:singleLine="true"
             android:text="장소"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="18sp" />
 
         <TextView
@@ -99,7 +99,7 @@
             android:layout_marginLeft="16dp"
             android:singleLine="true"
             android:text="방제목가나다라마바사아자차카타파하"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="23sp" />
 
         <ImageView
@@ -138,7 +138,9 @@
         android:layout_width="match_parent"
         android:layout_height="53dp"
         android:layout_below="@id/roomBakcground"
-        android:background="#000000"></RelativeLayout>
+        android:background="#000000">
+
+    </RelativeLayout>
 
     <View
         android:id="@+id/divider00"
