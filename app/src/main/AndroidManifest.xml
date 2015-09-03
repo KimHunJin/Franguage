@@ -67,9 +67,11 @@
             android:name=".Activity.AboutUsActivity"
             android:label="@string/title_activity_about_us" >
         </activity>
+
         <activity
-            android:name=".Activity.RoomDetailActivity"
-            android:label="@string/title_activity_room_detail" >
+            android:name=".Activity.RoomDetailActivity2"
+            android:label="@string/title_activity_room_detail"
+            android:parentActivityName=".MainActivity">
         </activity>
         <activity
             android:name=".Activity.ReplyActivity"

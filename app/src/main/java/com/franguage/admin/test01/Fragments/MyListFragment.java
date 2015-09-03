@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.franguage.admin.test01.Activity.CreateActivity;
+import com.franguage.admin.test01.Activity.RoomDetailActivity2;
 import com.franguage.admin.test01.Adapter.ListAdapter;
 import com.franguage.admin.test01.Item.ListItem;
 import com.franguage.admin.test01.R;
@@ -99,8 +100,23 @@ public class MyListFragment extends Fragment {
         mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ListItem item = list.get(position);
-                Toast.makeText(getActivity(), item.getmRoomMaker(), Toast.LENGTH_SHORT).show();
+
+                ListItem item = (ListItem)parent.getItemAtPosition(position);
+                Bundle extras = new Bundle();
+
+                extras.putString("room_key", item.getmRoomKey());
+                extras.putString("name", item.getmRoomName());
+                extras.putString("count", item.getmRoomMember());
+                extras.putString("location", item.getmRoomLocation());
+                extras.putString("language", item.getmRoomLanguage());
+                extras.putString("image", item.getmRoomImage());
+                extras.putString("info", item.getmRoomInfo());
+                extras.putString("create", item.getmRoomMaker());
+                extras.putString("user", Utils.getAppPreferences(getActivity(),"user_key"));
+
+                Intent mIntent = new Intent(getActivity(), RoomDetailActivity2.class);
+                mIntent.putExtras(extras);
+                startActivity(mIntent);
             }
         });
 

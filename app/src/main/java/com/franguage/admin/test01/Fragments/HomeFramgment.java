@@ -19,7 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.franguage.admin.test01.Activity.CreateActivity;
-import com.franguage.admin.test01.Activity.RoomDetailActivity;
+import com.franguage.admin.test01.Activity.RoomDetailActivity2;
 import com.franguage.admin.test01.Adapter.ListAdapter;
 import com.franguage.admin.test01.Item.ListItem;
 import com.franguage.admin.test01.Network.NetworkGetSi;
@@ -108,14 +108,6 @@ public class HomeFramgment extends Fragment {
         mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-/*                ListItem item = list.get(position);
-                Intent it = new Intent(getActivity(), RoomDetailActivity.class);
-                it.putExtra("name", item.getmRoomName());
-                it.putExtra("info", item.getmRoomInfo());
-                it.putExtra("Language", item.getmRoomLanguage());
-                it.putExtra("count", item.getmRoomMember());
-                it.putExtra("id", item.getmRoomMaker());
-                Toast.makeText(getActivity(),item.getmRoomMaker(),Toast.LENGTH_SHORT).show();*/
 
                 ListItem item = (ListItem)parent.getItemAtPosition(position);
                 Bundle extras = new Bundle();
@@ -130,7 +122,7 @@ public class HomeFramgment extends Fragment {
                 extras.putString("create", item.getmRoomMaker());
                 extras.putString("user", Utils.getAppPreferences(getActivity(),"user_key"));
 
-                Intent mIntent = new Intent(getActivity(), RoomDetailActivity.class);
+                Intent mIntent = new Intent(getActivity(), RoomDetailActivity2.class);
                 mIntent.putExtras(extras);
                 startActivity(mIntent);
             }

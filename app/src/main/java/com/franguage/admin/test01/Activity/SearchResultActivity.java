@@ -99,8 +99,23 @@ public class SearchResultActivity extends ActionBarActivity {
         mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ListItem item = list.get(position);
-                Toast.makeText(getApplicationContext(), item.getmRoomMaker(), Toast.LENGTH_SHORT).show();
+
+                ListItem item = (ListItem)parent.getItemAtPosition(position);
+                Bundle extras = new Bundle();
+
+                extras.putString("room_key", item.getmRoomKey());
+                extras.putString("name", item.getmRoomName());
+                extras.putString("count", item.getmRoomMember());
+                extras.putString("location", item.getmRoomLocation());
+                extras.putString("language", item.getmRoomLanguage());
+                extras.putString("image", item.getmRoomImage());
+                extras.putString("info", item.getmRoomInfo());
+                extras.putString("create", item.getmRoomMaker());
+                extras.putString("user", Utils.getAppPreferences(getApplicationContext(),"user_key"));
+
+                Intent mIntent = new Intent(getApplicationContext(), RoomDetailActivity2.class);
+                mIntent.putExtras(extras);
+                startActivity(mIntent);
             }
         });
 

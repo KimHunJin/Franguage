@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ProgressBar
-        android:id="@+id/pro_bar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone">
-    </ProgressBar>
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <RelativeLayout
         android:id="@+id/roomBakcground"
         android:layout_width="match_parent"
-        android:layout_height="189dp">
+        android:layout_height="149dp">
 
         <ImageView
             android:id="@+id/backgroundimage"
@@ -137,7 +134,6 @@
         android:id="@+id/dynamic_user_profile"
         android:layout_width="match_parent"
         android:layout_height="53dp"
-        android:layout_below="@id/roomBakcground"
         android:background="#000000">
 
     </RelativeLayout>
@@ -147,14 +143,21 @@
         style="@style/Profile_Detail_View_Divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/dynamic_user_profile"
         android:layout_marginTop="0dp" />
 
     <RelativeLayout
         android:id="@+id/room_introduce"
         android:layout_width="match_parent"
-        android:layout_height="176dp"
-        android:layout_below="@id/divider00">
+        android:layout_height="176dp">
+
+        <ProgressBar
+            android:id="@+id/pro_bar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true">
+        </ProgressBar>
 
         <TextView
             android:id="@+id/room_name"
@@ -182,7 +185,6 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_below="@id/room_introduce"
         android:background="#1397ab">
 
         <TextView
@@ -205,8 +207,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/relativeLayout">
+        android:layout_height="match_parent">
 
         <ListView
             android:id="@+id/room_board_list"
@@ -217,9 +218,4 @@
 
         </ListView>
     </ScrollView>
-
-    <include
-        layout="@layout/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+</LinearLayout>

@@ -12,7 +12,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.franguage.admin.test01.R;
+import com.franguage.admin.test01.Utils.RoundImageView;
 import com.franguage.admin.test01.Utils.Utils;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
  * Created by Admin on 2015-08-15.
@@ -20,13 +22,16 @@ import com.franguage.admin.test01.Utils.Utils;
 public class ProfileDetailActivity extends ActionBarActivity {
 
     private Toolbar mToolBar;
+    private ImageLoader loader = null;
     String user_key;
     TextView user_name, country_user, gender_user, location_user, email_user, language_user, intro_user;
+    RoundImageView user_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_profile);
+        loader = ImageLoader.getInstance();
 
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolBar);
@@ -39,6 +44,7 @@ public class ProfileDetailActivity extends ActionBarActivity {
         String profile_email = it.getStringExtra("profile_email");
         String profile_possible_language = it.getStringExtra("profile_possible_language");
         String profile_introduce = it.getStringExtra("profile_introduce");
+        String img_path = it.getStringExtra("profile_img");
 
         user_key = Utils.getAppPreferences(ProfileDetailActivity.this, "user_key");
 
@@ -49,6 +55,7 @@ public class ProfileDetailActivity extends ActionBarActivity {
         email_user = (TextView)findViewById(R.id.profile_detail_user_email);
         language_user = (TextView)findViewById(R.id.profile_detail_user_language);
         intro_user = (TextView)findViewById(R.id.profile_detail_user_introduce);
+        user_img = (RoundImageView)findViewById(R.id.profile_detail_user_image);
 
         user_name.setText(name);
         country_user.setText(profile_land);
@@ -57,6 +64,7 @@ public class ProfileDetailActivity extends ActionBarActivity {
         email_user.setText(profile_email);
         language_user.setText(profile_possible_language);
         intro_user.setText(profile_introduce);
+        loader.displayImage(img_path, user_img);
 
         final ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_keyboard_arrow_left_black_24dp);
